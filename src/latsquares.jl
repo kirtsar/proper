@@ -4,9 +4,11 @@ end
 
 
 function latin(fam :: Family, pair :: Pairing)
+    n = length(fam)
+    m = 2^n - 1
     table = zeros(Int, (m + 1, m + 1))
     ls = LatinSquare(table)
-    latin!(LS, fam, pair)
+    latin!(ls, fam, pair)
     return LatinSquare(table)
 end
 

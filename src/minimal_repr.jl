@@ -1,13 +1,3 @@
-function sort_assoc(assoc)
-    inds = sortperm(assoc[2])
-    return (assoc[1][inds], assoc[2][inds], assoc[3][inds])
-end
-
-
-assoc3 = load_assoc("assoc3.clf")
-# sort!(assoc3, by = (t -> t[2]))
-
-
 function nzLen(zheg :: ZhegFun{T}) where T
     reslen = 0
     for mon in zheg.ANF

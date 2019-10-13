@@ -72,39 +72,3 @@ function has_ortho(fam :: Family{T}) where T
     end
     return false
 end
-
-
-#=
-function tmp()
-    i = 0
-    while true
-        i += 1
-        if has_ortho(assoc4[1][i])
-            println(i)
-            break
-        end
-    end
-end
-=#
-
-
-function test_ortho()
-    #=
-    Family(
-    ZhegFun([[3,4], [2,3,4]]),
-    ZhegFun([[1,3,4], [1, 4]]),
-    ZhegFun([[1,2], [1,2,4]]),
-    ZhegFun([[2,3], [1,2,3]]),
-    )
-    =#
-
-    fam2 = Family(
-    ZhegFun([[3,4,5], [2,3,4,5], Int[]]),
-    ZhegFun([[4,5,1], [3,4,5,1]]),
-    ZhegFun([[5,1,2], [4,5,1,2]]),
-    ZhegFun([[1,2,3], [5,1,2,3]]),
-    ZhegFun([[2,3,4], [1,2,3,4]])
-    )
-    @assert(is_ortho(fam2) == false)
-    @assert(has_ortho(fam2) == true)
-end
