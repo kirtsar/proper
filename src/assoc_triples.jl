@@ -1,9 +1,6 @@
 # construct all latin squares of given size
 # find the number of associative triples
 
-include("classifiers.jl")
-include("latsquares.jl")
-
 
 #struct AssocAnalyzer
 

@@ -60,7 +60,39 @@ Family(
 )
 
 
+function generate_ortho_family3()
+    fun1 = ZhegFun([6, 4])
+    fun2 = ZhegFun([5, 1])
+    fun3 = ZhegFun([3, 2])
+    return Family([fun1, fun2, fun3])
+end
 
 
+function generate_ortho_family4()
+    fun1 = ZhegFun([12, 14])
+    fun2 = ZhegFun([ 9, 13])
+    fun3 = ZhegFun([ 3, 11])
+    fun4 = ZhegFun([ 6,  7])
+    return Family([fun1, fun2, fun3, fun4])
+end
 
 
+function monom(arr)
+    res = 0
+    for x in arr
+        res += 2^(x-1)
+    end
+    return Monom(res)
+end
+
+
+function generate_ortho_family5()
+    mon5 = [2,3,4,5,1,2,3,4,5]
+    funs = Vector{ZhegFun}([])
+    for i in 1 : 5
+        m1 = monom(mon5[i:i+3])
+        m2 = monom(mon5[i+1:i+3])
+        push!(funs, ZhegFun([m1, m2]))
+    end
+    return Family(funs...)
+end

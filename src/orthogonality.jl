@@ -72,3 +72,23 @@ function has_ortho(fam :: Family{T}) where T
     end
     return false
 end
+
+function monom(arr)
+    res = 0
+    for x in arr
+        res += 2^(x-1)
+    end
+    return Monom(res)
+end
+
+
+function generate_ortho_family(n)
+    mon = vcat(collect(2 : n), collect(1 : n))
+    funs = Vector{ZhegFun}([])
+    for i in 1 : n
+        m1 = monom(mon[i : i+(n-2)])
+        m2 = monom(mon[i+1 : i+(n-2)])
+        push!(funs, ZhegFun([m1, m2]))
+    end
+    return Family(funs...)
+end

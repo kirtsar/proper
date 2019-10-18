@@ -178,7 +178,7 @@ end
 
 
 
-#include("pairing.jl")
+include("pairing.jl")
 # derive permutation x -> x + y + fam o pi(x, y)
 # as array: perm[i] = pi(i)
 # fixed point : perm[i] == i
