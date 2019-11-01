@@ -99,7 +99,7 @@ end
 
 
 function load_assoc(filename)
-    in = open(project_folder * "/DATA/" * filename, "r")
+    in = open("../data/" * filename, "r")
     familyLen = parse(Int, readline(in))
     transLen = parse(Int, readline(in))
     tmin = zeros(Int, transLen)

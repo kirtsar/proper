@@ -37,6 +37,7 @@ function generate_all_pairings(numVars)
     famReprSet = Set()
     for i in 1 : numVars
         push!(famReprSet, powerset([0, 1, 2, 3]))
+        #push!(famReprSet, powerset([1, 2, 3]))
     end
 
     for famRepr in product(famReprSet...)
